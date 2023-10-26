@@ -57,10 +57,10 @@ app.get('*', (req, res) => {
   })
 })
 
-// globah error handler
+// global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.status(500).json({
+  return res.status(500).json({
     data: null,
     error: 'Server Error'
   })
