@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const TaskModel = require('../models/task-model');
 const logger = require('../logger');
 
@@ -84,6 +85,10 @@ const updateTask = async (req, res) => {
     const taskId = req.params.id;
     const userId = req.user._id
 
+    if (!mongoose.Types.ObjectId.isValid(blogId)) {
+      return res.status(400).json({ message: 'Invalid ID format' });
+    }
+
     const task = await TaskModel.findOne({ _id: taskId, user_id: userId });
 
     if (!task) {
@@ -114,6 +119,10 @@ const deleteTask = async (req, res) => {
 
     const taskId = req.params.id;
     const userId = req.user._id;
+
+    if (!mongoose.Types.ObjectId.isValid(blogId)) {
+      return res.status(400).json({ message: 'Invalid ID format' });
+    }
 
     const deletedTask = await TaskModel.findByIdAndRemove({ _id: taskId, user_id: userId });
 
