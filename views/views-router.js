@@ -80,7 +80,7 @@ router.use(async (req, res, next) => {
             res.redirect('welcome')
         }
     } else {
-        res.redirect('login')
+        res.redirect('welcome')
     }
 })
 
