@@ -88,7 +88,7 @@ const updateStatus = async (req, res) => {
       logger.info('[UpdateStatus] => Update task status process done.');
     }).catch(err => {
       console.log(err) 
-      res.status(500).send(err)
+      return res.status(500).send(err)
     })
 
 }
@@ -104,7 +104,7 @@ const editTask = async (req, res) => {
     logger.info('[EditTask] => Edit task process done.');
     }).catch(err => {
       console.log(err) 
-      res.status(500).send(err)
+      return res.status(500).send(err)
     })
 
 }
@@ -120,7 +120,7 @@ const deleteStatus = async (req, res) => {
     logger.info('[ChnageDeleteStatus] => Change delete status process done.');
     }).catch(err => {
       console.log(err) 
-      res.status(500).send(err)
+      return res.status(500).send(err)
     })
 
 }
@@ -135,7 +135,7 @@ const deleteTask = async (req, res) => {
   logger.info('[PermenentDelete] => Permanent delete process done.');
   }).catch(err => {
       console.log(err) 
-      res.status(500).send(err)
+      return res.status(500).send(err)
     })
 }
 
