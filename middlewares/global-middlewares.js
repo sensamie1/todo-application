@@ -9,9 +9,9 @@ const checkBody = (req, res, next) => {
     logger.info('[CheckBody] => Body check process started...');
     const contentType = req.headers['content-type'];
     if (!req.body || !contentType || contentType.indexOf('application/json') !== 0) {
-      res.status(400).json({
+      return res.status(400).json({
       data: null,
-      error: 'must have a body with ontent type of application/json'
+      error: 'must have a body with content type of application/json'
       })
     }
     logger.info('[CheckBody] => Body check process done.');

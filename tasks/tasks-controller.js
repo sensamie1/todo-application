@@ -101,7 +101,7 @@ const updateTask = async (req, res) => {
       data: updatedTask,
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       message: 'Server Error',
       data: null
     });
