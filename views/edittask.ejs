@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Task</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+
+  form {
+    max-width: 400px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+
+  input[type="text"],
+  textarea,
+  input[type="datetime-local"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  input[type="submit"] {
+    background: #4CAF50;
+    color: #fff;
+    border: 0;
+    padding: 15px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background: #086c28;
+  }
+
+  fieldset {
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+
+  legend {
+    width: auto;
+    padding: 0 10px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 600px) {
+    form {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+    <header>
+      <%- include('./partials/header'); %>
+    </header>
+  <h2>Edit Task (<%= tasks.task_name %>)</h2>
+
+    <form action="/views/tasks1/edit/<%= tasks._id %>" method="post">
+      <label for="task_name">Task Name:</label><br>
+      <input type="text" id="task_name" name="task_name" value="<%= tasks.task_name %>" required><br>
+      <label for="description">Description:</label><br>
+      <input type="text" id="description" name="description" value="<%= tasks.description %>" required><br>
+      <input type="hidden" id="status" name="status" value="pending" required><br>
+      <fieldset>
+        <legend>Duration</legend>
+
+        <label for="start_date">Start Date and Time:</label><br>
+        <input type="datetime-local" id="start_date" name="start_date" value="<%= tasks.start_date %>" required><br><br>
+
+        <label for="due_date">Due Date and Time:</label><br>
+        <input type="datetime-local" id="due_date" name="due_date" value="<%= tasks.due_date %>" required><br><br>
+      </fieldset>
+
+      <div class="button-container">
+        <input class="btn" type="submit" value="Update Task">
+      </div>
+    </form>
+
+
+    <footer>
+      <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>
+

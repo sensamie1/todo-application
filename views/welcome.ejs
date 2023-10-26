@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .intro {
+      max-width: 600px;
+      padding: 20px;
+      margin-top: -200px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      border: 2px solid #0a672f;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #014e2f;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #04562a;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .intro {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <%- include('./partials/header'); %>
+  </header>
+  <div class="container">
+    <div class="intro">
+      <h2>Welcome to Todo App</h2>
+      <p>
+        Take control of your tasks and streamline your workflow with our powerful todo application. Whether it's managing your daily to-dos or planning long-term projects, our intuitive platform is designed to simplify your life.
+      </p>
+      <p>
+        Sign up now to access a comprehensive set of features, including task prioritization, due date reminders, and seamless collaboration tools. Join our growing community of productive individuals today.
+      </p>
+      <a class="btn" href="/views/login">Login</a>
+      <a class="btn" href="/views/signup">Sign Up</a>
+    </div>
+  </div>
+  
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+
+
+</body>
+</html>

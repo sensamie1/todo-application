@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .container {
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      color: #555;
+    }
+    .btn {
+      display: block;
+      width: 60%;
+      max-width: 200px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+          width: 80%;
+      }
+    }
+  </style>
+  <title>You Have Not Created Any Task</title>
+</head>
+<body>
+  <div class="container">
+    <h2>You Have Not Created Any Task</h2>
+    <p>Start by creating a new task.</p>
+    <a class="btn" href="/views/taskcreate">Create Task</a>
+    <a class="btn" href="/views/home">Home</a>
+  </div>
+
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+
+
+
+</body>
+</html>
