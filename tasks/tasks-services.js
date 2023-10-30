@@ -110,14 +110,14 @@ const editTask = async (req, res) => {
 }
 
 const deleteStatus = async (req, res) => {
-  logger.info('[ChnageDeleteStatus] => Change delete status process started...');
+  logger.info('[ChangeDeleteStatus] => Change delete status process started...');
   const id = req.params.id;
   const updatedTask = req.body
   console.log(updatedTask);
   TaskModel.findByIdAndUpdate(id, updatedTask, { new: true })
     .then(newStatus => {
       res.redirect('/views/taskdeletesuccess')
-    logger.info('[ChnageDeleteStatus] => Change delete status process done.');
+    logger.info('[ChangeDeleteStatus] => Change delete status process done.');
     }).catch(err => {
       console.log(err) 
       return res.status(500).send(err)
